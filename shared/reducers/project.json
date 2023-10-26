@@ -1,0 +1,29 @@
+{
+  "name": "reducers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "shared/reducers/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/shared/reducers",
+        "main": "shared/reducers/src/index.ts",
+        "tsConfig": "shared/reducers/tsconfig.lib.json",
+        "assets": ["shared/reducers/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "shared/reducers/**/*.ts",
+          "shared/reducers/package.json"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
