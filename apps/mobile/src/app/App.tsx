@@ -1,25 +1,14 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
-import { reducers } from '@m-repo/reducers'; //This is how import works
+import CounterComponent from './features/CounterComponent';
+import { Provider } from 'react-redux';
+import { store } from '@m-repo/store';
 
 export const App = () => {
   return (
-    <>
-      <SafeAreaView />
-      <View>
-        <Text style={styles.textLg}>Welcome Mobile</Text>
-        <Text style={styles.textLg}>
-          {'From shared module -> ' + reducers()}
-        </Text>
-      </View>
-    </>
+    <Provider store={store}>
+      <CounterComponent />
+    </Provider>
   );
 };
-const styles = StyleSheet.create({
-  textLg: {
-    fontSize: 24,
-    padding: 24,
-  },
-});
 
 export default App;
