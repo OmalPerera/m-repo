@@ -1,13 +1,12 @@
-import { reducers } from '@m-repo/reducers';
+import { Provider } from 'react-redux';
+import CounterComponent from './counterComponent';
+import { store } from '@m-repo/store';
 
 export function App() {
   return (
-    <div>
-      <h1>
-        <span>Hello there</span>
-      </h1>
-      <span>{'From shared module -> ' + reducers()}</span>
-    </div>
+    <Provider store={store}>
+      <CounterComponent />
+    </Provider>
   );
 }
 
