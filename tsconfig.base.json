@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@m-repo/reducers": ["shared/reducers/src/index.ts"]
+      "@m-repo/store": ["shared/store/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

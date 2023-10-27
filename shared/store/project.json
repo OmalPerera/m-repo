@@ -1,0 +1,29 @@
+{
+  "name": "store",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "shared/store/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/shared/store",
+        "main": "shared/store/src/index.ts",
+        "tsConfig": "shared/store/tsconfig.lib.json",
+        "assets": ["shared/store/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "shared/store/**/*.ts",
+          "shared/store/package.json"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
